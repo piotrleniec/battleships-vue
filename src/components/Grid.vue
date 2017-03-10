@@ -16,7 +16,10 @@ export default {
 
 <style>
 .grid {
-  background-color: grey;
+  display: inline-block;
+  margin: auto;
+  background-color: #e8ecf2;
+  border: black solid 1px;
 }
 
 .grid__cell-row:hover {
@@ -27,5 +30,6 @@ export default {
   display: inline-block;
   width: 50px;
   height: 50px;
+  border: black solid 1px;
 }
 </style>
