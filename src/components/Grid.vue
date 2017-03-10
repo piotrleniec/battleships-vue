@@ -1,16 +1,27 @@
 <template>
   <div class="grid">
-    <div class="grid__cell-row" v-for="rowIndex in 10">
-      <div class="grid__cell" v-for="cellIndex in 10">
-        {{ rowIndex }} {{ cellIndex }}
-      </div>
+    <div class="grid__cell-row" v-for="row in ROWS">
+      <cell v-for="column in COLUMNS" :label="row + column" />
     </div>
   </div>
 </template>
 
 <script>
+import Cell from '@/components/Cell'
+
 export default {
-  name: 'grid'
+  name: 'grid',
+  computed: {
+    ROWS: function () {
+      return ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
+    },
+    COLUMNS: function () {
+      return ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+    }
+  },
+  components: {
+    Cell
+  }
 }
 </script>
 
@@ -24,12 +35,5 @@ export default {
 
 .grid__cell-row:hover {
   background-color: red;
-}
-
-.grid__cell {
-  display: inline-block;
-  width: 50px;
-  height: 50px;
-  border: black solid 1px;
 }
 </style>
