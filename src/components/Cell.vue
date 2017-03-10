@@ -16,4 +16,16 @@ export default {
   height: 60px;
   border: black solid 1px;
 }
+
+.cell--grey {
+  background-color: grey;
+}
+
+.cell--blue {
+  background-color: blue;
+}
+
+.cell--red {
+  background-color: red;
+}
 </style>
