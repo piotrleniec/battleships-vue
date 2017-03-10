@@ -1,6 +1,14 @@
 <template>
-  <div>
-    <grid />
+  <div id="app">
+    <div class="grid-container">
+      <h1>Player</h1>
+      <grid />
+    </div>
+
+    <div class="grid-container">
+      <h1>Opponent</h1>
+      <grid />
+    </div>
   </div>
 </template>
 
@@ -12,3 +20,16 @@ export default {
   components: { Grid }
 }
 </script>
+
+<style>
+#app {
+  white-space: nowrap;
+}
+
+.grid-container {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 50%;
+  white-space: normal;
+}
+</style>
