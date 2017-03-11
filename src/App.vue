@@ -2,7 +2,7 @@
   <div id="app">
     <div class="grid-container">
       <h1>Player</h1>
-      <grid />
+      <player-grid />
     </div>
 
     <div class="grid-container">
@@ -15,10 +15,11 @@
 <script>
 import Grid from '@/components/Grid'
 import EnemyGrid from '@/components/EnemyGrid'
+import PlayerGrid from '@/components/PlayerGrid'
 
 export default {
   name: 'app',
-  components: { Grid, EnemyGrid }
+  components: { Grid, EnemyGrid, PlayerGrid }
 }
 </script>
 
