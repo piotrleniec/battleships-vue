@@ -34,16 +34,6 @@ const actions = {
 }
 
 const mutations = {
-  [types.HANDLE_PLAYER_CELL_CLICK] (state, index) {
-    const currentStage = getStageByName(state.currentStageName)
-
-    currentStage.onPlayerCellClick(state, index)
-  },
-  [types.HANDLE_ENEMY_CELL_CLICK] (state, index) {
-    const currentStage = getStageByName(state.currentStageName)
-
-    currentStage.onEnemyCellClick(state, index)
-  },
   [types.DEPLOY_SHIP] (state, index) {
     Vue.set(state.playerGrid.ships, index, true)
 
