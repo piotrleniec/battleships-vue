@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import * as enemyMoveStage from '@/core/stages/enemyMove'
+import * as enemyMoveStage from './enemyMove'
 
 export const NAME = 'PLAYER_MOVE'
 

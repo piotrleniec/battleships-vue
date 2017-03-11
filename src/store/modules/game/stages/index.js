@@ -1,6 +1,6 @@
-import * as shipsDeploymentStage from '@/core/stages/shipsDeployment'
-import * as playerMoveStage from '@/core/stages/playerMove'
-import * as enemyMoveStage from '@/core/stages/enemyMove'
+import * as shipsDeploymentStage from './shipsDeployment'
+import * as playerMoveStage from './playerMove'
+import * as enemyMoveStage from './enemyMove'
 
 const GROUPED_STAGES = {
   [shipsDeploymentStage.NAME]: shipsDeploymentStage,

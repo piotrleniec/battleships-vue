@@ -2,8 +2,8 @@ import {
   createGrid, createGridWithShips,
   enemyGridPresentation, playerGridPresentation
 } from '@/core/grid'
-import { getStageByName } from '@/core/stages'
-import * as shipsDeployment from '@/core/stages/shipsDeployment'
+import { getStageByName } from './stages'
+import * as shipsDeployment from './stages/shipsDeployment'
 import * as types from '@/store/mutation-types'
 
 const state = {

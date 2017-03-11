@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import * as playerMoveStage from '@/core/stages/playerMove'
+import * as playerMoveStage from './playerMove'
 
 export const NAME = 'SHIPS_DEPLOYMENT'
 
