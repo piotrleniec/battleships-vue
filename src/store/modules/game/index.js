@@ -20,6 +20,9 @@ const getters = {
 const actions = {
   onPlayerCellClick: ({ commit }, { x, y }) => {
     commit(types.HANDLE_PLAYER_CELL_CLICK, 10 * y + x)
+  },
+  onEnemyCellClick: ({ commit }, { x, y }) => {
+    commit(types.HANDLE_ENEMY_CELL_CLICK, 10 * y + x)
   }
 }
 
@@ -28,6 +31,11 @@ const mutations = {
     const currentStage = getStageByName(state.currentStageName)
 
     currentStage.onPlayerCellClick(state, index)
+  },
+  [types.HANDLE_ENEMY_CELL_CLICK] (state, index) {
+    const currentStage = getStageByName(state.currentStageName)
+
+    currentStage.onEnemyCellClick(state, index)
   }
 }
 

@@ -11,3 +11,5 @@ export const onPlayerCellClick = (state, index) => {
     state.currentStageName = playerMoveStage.NAME
   }
 }
+
+export const onEnemyCellClick = (state, index) => {}
