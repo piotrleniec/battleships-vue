@@ -1,10 +1,7 @@
 <template>
   <div class="grid">
     <div>
-      <div
-        class="grid__cell grid__cell--header"
-        v-html="'&nbsp;'"
-      ></div>
+      <div class="grid__cell grid__cell--header" v-html="'&nbsp;'"></div>
       <div
         v-for="label in horizontalLabels"
         class="grid__cell grid__cell--header"
@@ -12,7 +9,11 @@
     </div>
     <div v-for="(label, y) in verticalLabels">
       <div class="grid__cell grid__cell--header">{{ label }}</div>
-      <div v-for="x in 10" class="grid__cell" v-html="'&nbsp;'"></div>
+      <div
+        v-for="x in 10"
+        class="grid__cell grid__cell--board"
+        v-html="'&nbsp;'"
+      ></div>
     </div>
   </div>
 </template>
@@ -31,7 +32,6 @@ export default {
 .grid {
   display: inline-block;
   margin: auto;
-  background-color: #e8ecf2;
   border: black solid 1px;
 }
 
@@ -46,5 +46,9 @@ export default {
 
 .grid__cell--header {
   background-color: #7b7c7c;
+}
+
+.grid__cell--board {
+  background-color: #e8ecf2;
 }
 </style>
