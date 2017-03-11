@@ -1,24 +1,11 @@
 <template>
-  <div :class="classes">{{ label }}</div>
+  <div class="cell">{{ label }}</div>
 </template>
 
 <script>
-import * as cellStates from '@/core/cellStates'
-
 export default {
   name: 'cell',
-  props: ['label', 'state'],
-  computed: {
-    classes: function () {
-      const modifierClass = {
-        [cellStates.FOG_OF_WAR]: 'cell--grey',
-        [cellStates.MISS]: 'cell--blue',
-        [cellStates.HIT]: 'cell--red'
-      }[this.state]
-
-      return ['cell', modifierClass]
-    }
-  }
+  props: ['label', 'state']
 }
 </script>
 
