@@ -19,12 +19,15 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'enemy-grid',
   data: () => ({
     horizontalLabels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     verticalLabels: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
-  })
+  }),
+  computed: mapGetters(['enemyGrid'])
 }
 </script>
 
