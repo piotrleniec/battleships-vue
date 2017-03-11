@@ -17,7 +17,9 @@ export const createGridWithShips = (numberOfShips) => {
 }
 
 export const enemyGridPresentation = grid =>
-  zip(this.grid.ships, this.grid.hits).map((ship, hit) => {
+  zip(grid.ships, grid.hits).map(zipped => {
+    const [ship, hit] = zipped
+
     if (!hit) return enemyCellTypes.FOG_OF_WAR
 
     return ship ? enemyCellTypes.HIT : enemyCellTypes.MISS
