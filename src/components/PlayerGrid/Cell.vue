@@ -1,7 +1,7 @@
 <template>
   <div
     :class="classes"
-    @click="onCellClick({ x, y })"
+    @click="onPlayerCellClick({ x, y })"
     v-html="'&nbsp;'"
   >
   </div>
@@ -29,7 +29,7 @@ export default {
       return ['player-grid__cell', modifierClass]
     }
   },
-  methods: mapActions(['onCellClick'])
+  methods: mapActions(['onPlayerCellClick'])
 }
 </script>
 

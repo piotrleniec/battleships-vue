@@ -3,7 +3,7 @@ import * as playerMoveStage from '@/core/stages/playerMove'
 
 export const NAME = 'SHIPS_DEPLOYMENT'
 
-export const onCellClick = (state, index) => {
+export const onPlayerCellClick = (state, index) => {
   Vue.set(state.playerGrid.ships, index, true)
 
   const deployedShips = state.playerGrid.ships.filter(ship => ship).length
