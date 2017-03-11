@@ -1,13 +1,10 @@
-import Vue from 'vue'
 import {
   createGrid, createGridWithShips,
   enemyGridPresentation, playerGridPresentation
 } from '@/core/grid'
 import { getStageByName } from './stages'
 import * as shipsDeployment from './stages/shipsDeployment'
-import * as playerMoveStage from './stages/playerMove'
-import * as enemyMoveStage from './stages/enemyMove'
-import * as types from '@/store/mutation-types'
+import mutations from './mutations'
 
 const state = {
   playerGrid: createGrid(),
@@ -30,22 +27,6 @@ const actions = {
     const currentStage = getStageByName(state.currentStageName)
 
     currentStage.onEnemyCellClick(context, 10 * y + x)
-  }
-}
-
-const mutations = {
-  [types.DEPLOY_SHIP] (state, index) {
-    Vue.set(state.playerGrid.ships, index, true)
-
-    const deployedShips = state.playerGrid.ships.filter(ship => ship).length
-    if (deployedShips === 10) {
-      state.currentStageName = playerMoveStage.NAME
-    }
-  },
-  [types.HIT_ENEMY_FIELD] (state, index) {
-    Vue.set(state.enemyGrid.hits, index, true)
-
-    state.currentStageName = enemyMoveStage.NAME
   }
 }
 
