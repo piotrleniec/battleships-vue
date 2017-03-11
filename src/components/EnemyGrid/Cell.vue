@@ -1,9 +1,14 @@
 <template>
-  <div :class="classes" v-html="'&nbsp;'"></div>
+  <div
+    :class="classes"
+    @click="onEnemyCellClick({ x, y })"
+    v-html="'&nbsp;'"
+  >
+  </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import * as cellTypes from '@/core/cellTypes/enemy'
 
 export default {
@@ -22,7 +27,8 @@ export default {
 
       return ['enemy-grid__cell', modifierClass]
     }
-  }
+  },
+  methods: mapActions(['onEnemyCellClick'])
 }
 </script>
 
