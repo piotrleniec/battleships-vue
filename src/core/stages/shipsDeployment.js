@@ -1,5 +1,5 @@
 export const NAME = 'SHIPS_DEPLOYMENT'
 
-export const onCellClick = (state, x, y) => {
-  console.log(x, y)
+export const onCellClick = (state, index) => {
+  console.log(index)
 }

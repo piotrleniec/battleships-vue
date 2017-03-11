@@ -19,15 +19,15 @@ const getters = {
 
 const actions = {
   onCellClick: ({ commit }, { x, y }) => {
-    commit(types.CURRENT_STAGE_ON_CELL_CLICK, { x, y })
+    commit(types.CURRENT_STAGE_ON_CELL_CLICK, 10 * y + x)
   }
 }
 
 const mutations = {
-  [types.CURRENT_STAGE_ON_CELL_CLICK] (state, { x, y }) {
+  [types.CURRENT_STAGE_ON_CELL_CLICK] (state, index) {
     const currentStage = getStageByName(state.currentStageName)
 
-    currentStage.onCellClick(state, x, y)
+    currentStage.onCellClick(state, index)
   }
 }
 
