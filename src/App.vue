@@ -13,13 +13,12 @@
 </template>
 
 <script>
-import Grid from '@/components/Grid'
 import EnemyGrid from '@/components/EnemyGrid'
 import PlayerGrid from '@/components/PlayerGrid'
 
 export default {
   name: 'app',
-  components: { Grid, EnemyGrid, PlayerGrid }
+  components: { EnemyGrid, PlayerGrid }
 }
 </script>
 
