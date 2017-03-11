@@ -6,4 +6,6 @@ export const onPlayerCellClick = (context, index) => {}
 
 export const onEnemyCellClick = ({ commit }, index) => {
   commit(types.HIT_ENEMY_FIELD, index)
+
+  setTimeout(() => { commit(types.RANDOM_ENEMY_HIT) }, 500)
 }
