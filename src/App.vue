@@ -6,18 +6,19 @@
     </div>
 
     <div class="grid-container">
-      <h1>Opponent</h1>
-      <grid />
+      <h1>Enemy</h1>
+      <enemy-grid />
     </div>
   </div>
 </template>
 
 <script>
 import Grid from '@/components/Grid'
+import EnemyGrid from '@/components/EnemyGrid'
 
 export default {
   name: 'app',
-  components: { Grid }
+  components: { Grid, EnemyGrid }
 }
 </script>
 
