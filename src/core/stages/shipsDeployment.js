@@ -1,5 +1,7 @@
+import Vue from 'vue'
+
 export const NAME = 'SHIPS_DEPLOYMENT'
 
 export const onCellClick = (state, index) => {
-  console.log(index)
+  Vue.set(state.playerGrid.ships, index, true)
 }
