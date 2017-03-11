@@ -4,20 +4,23 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import * as cellTypes from '@/core/cellTypes/enemy'
+import * as cellTypes from '@/core/cellTypes/player'
 
 export default {
   name: 'cell',
   props: ['x', 'y'],
   computed: {
-    ...mapGetters(['enemyGrid']),
+    ...mapGetters(['playerGrid']),
     classes: function () {
-      const cellType = this.enemyGrid[10 * this.y + this.x]
+      const cellType = this.playerGrid[10 * this.y + this.x]
+
+      console.log(this.playerGrid)
 
       const modifierClass = {
-        [cellTypes.FOG_OF_WAR]: 'player-grid__cell--fog-of-war',
-        [cellTypes.HIT]: 'player-grid__cell--hit',
-        [cellTypes.MISS]: 'player-grid__cell--miss'
+        [cellTypes.WATER_IN_FOG_OF_WAR]: 'player-grid__cell--water-in-fog-of-war',
+        [cellTypes.VISIBLE_WATER]: 'player-grid__cell--visible-water',
+        [cellTypes.SHIP_IN_FOG_OF_WAR]: 'player-grid__cell--ship-in-fog-of-war',
+        [cellTypes.VISIBLE_SHIP]: 'player-grid__cell--visible-ship'
       }[cellType]
 
       return ['player-grid__cell', modifierClass]
@@ -36,15 +39,19 @@ export default {
   text-align: center;
 }
 
-.player-grid__cell--fog-of-war {
-  background-color: grey;
+.player-grid__cell--water-in-fog-of-war {
+  background-color: #8181f9;
 }
 
-.player-grid__cell--hit {
-  background-color: red;
-}
-
-.player-grid__cell--miss {
+.player-grid__cell--visible-water {
   background-color: blue;
+}
+
+.player-grid__cell--ship-in-fog-of-war {
+  background-color: #ff7272;
+}
+
+.player-grid__cell--visible-ship {
+  background-color: red;
 }
 </style>
