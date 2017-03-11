@@ -15,19 +15,19 @@ export default {
       const cellType = this.enemyGrid[10 * this.y + this.x]
 
       const modifierClass = {
-        [cellTypes.FOG_OF_WAR]: 'cell--fog-of-war',
-        [cellTypes.HIT]: 'cell--hit',
-        [cellTypes.MISS]: 'cell--miss'
+        [cellTypes.FOG_OF_WAR]: 'enemy-grid__cell--fog-of-war',
+        [cellTypes.HIT]: 'enemy-grid__cell--hit',
+        [cellTypes.MISS]: 'enemy-grid__cell--miss'
       }[cellType]
 
-      return ['cell', modifierClass]
+      return ['enemy-grid__cell', modifierClass]
     }
   }
 }
 </script>
 
 <style>
-.cell {
+.enemy-grid__cell {
   display: inline-block;
   width: 60px;
   height: 60px;
@@ -36,15 +36,15 @@ export default {
   text-align: center;
 }
 
-.cell--fog-of-war {
+.enemy-grid__cell--fog-of-war {
   background-color: grey;
 }
 
-.cell--hit {
+.enemy-grid__cell--hit {
   background-color: red;
 }
 
-.cell--miss {
+.enemy-grid__cell--miss {
   background-color: blue;
 }
 </style>

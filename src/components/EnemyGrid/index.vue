@@ -1,14 +1,14 @@
 <template>
-  <div class="grid">
+  <div class="enemy-grid">
     <div>
-      <div class="grid__header" v-html="'&nbsp;'"></div>
+      <div class="enemy-grid__label" v-html="'&nbsp;'"></div>
       <div
         v-for="label in horizontalLabels"
-        class="grid__header"
+        class="enemy-grid__label"
       >{{ label }}</div>
     </div>
     <div v-for="(label, y) in verticalLabels">
-      <div class="grid__header">{{ label }}</div>
+      <div class="enemy-grid__label">{{ label }}</div>
       <cell v-for="x in 10" :x="x - 1" :y="y" />
     </div>
   </div>
@@ -28,13 +28,13 @@ export default {
 </script>
 
 <style>
-.grid {
+.enemy-grid {
   display: inline-block;
   margin: auto;
   border: black solid 1px;
 }
 
-.grid__header {
+.enemy-grid__label {
   display: inline-block;
   width: 60px;
   height: 60px;
