@@ -1,15 +1,9 @@
-import Vue from 'vue'
-import * as playerMoveStage from './playerMove'
+import * as types from '@/store/mutation-types'
 
 export const NAME = 'SHIPS_DEPLOYMENT'
 
-export const onPlayerCellClick = (state, index) => {
-  Vue.set(state.playerGrid.ships, index, true)
-
-  const deployedShips = state.playerGrid.ships.filter(ship => ship).length
-  if (deployedShips === 10) {
-    state.currentStageName = playerMoveStage.NAME
-  }
+export const onPlayerCellClick = ({ commit }, index) => {
+  commit(types.DEPLOY_SHIP, index)
 }
 
 export const onEnemyCellClick = (state, index) => {}
