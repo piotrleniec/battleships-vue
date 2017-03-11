@@ -1,4 +1,7 @@
-import { createGrid, createGridWithShips, enemyGridPresentation } from '@/store/modules/game/grid'
+import {
+  createGrid, createGridWithShips,
+  enemyGridPresentation, playerGridPresentation
+} from '@/store/modules/game/grid'
 
 const state = {
   playerGrid: createGrid(),
@@ -6,7 +9,8 @@ const state = {
 }
 
 const getters = {
-  enemyGrid: state => enemyGridPresentation(state.enemyGrid)
+  enemyGrid: state => enemyGridPresentation(state.enemyGrid),
+  playerGrid: state => playerGridPresentation(state.playerGrid)
 }
 
 const actions = {}
