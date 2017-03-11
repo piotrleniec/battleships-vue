@@ -14,8 +14,6 @@ export default {
     classes: function () {
       const cellType = this.playerGrid[10 * this.y + this.x]
 
-      console.log(this.playerGrid)
-
       const modifierClass = {
         [cellTypes.WATER_IN_FOG_OF_WAR]: 'player-grid__cell--water-in-fog-of-war',
         [cellTypes.VISIBLE_WATER]: 'player-grid__cell--visible-water',
