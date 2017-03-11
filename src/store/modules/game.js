@@ -1,7 +1,7 @@
 import {
   createGrid, createGridWithShips,
   enemyGridPresentation, playerGridPresentation
-} from '@/store/modules/game/grid'
+} from '@/core/grid'
 import { getStageByName } from '@/core/stages'
 import * as shipsDeployment from '@/core/stages/shipsDeployment'
 import * as types from '@/store/mutation-types'
