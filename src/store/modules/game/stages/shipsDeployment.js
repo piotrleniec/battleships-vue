@@ -6,4 +6,4 @@ export const onPlayerCellClick = ({ commit }, index) => {
   commit(types.DEPLOY_SHIP, index)
 }
 
-export const onEnemyCellClick = (state, index) => {}
+export const onEnemyCellClick = (context, index) => {}

@@ -6,6 +6,7 @@ import {
 import { getStageByName } from './stages'
 import * as shipsDeployment from './stages/shipsDeployment'
 import * as playerMoveStage from './stages/playerMove'
+import * as enemyMoveStage from './stages/enemyMove'
 import * as types from '@/store/mutation-types'
 
 const state = {
@@ -25,8 +26,10 @@ const actions = {
 
     currentStage.onPlayerCellClick(context, 10 * y + x)
   },
-  onEnemyCellClick: ({ commit }, { x, y }) => {
-    commit(types.HANDLE_ENEMY_CELL_CLICK, 10 * y + x)
+  onEnemyCellClick: (context, { x, y }) => {
+    const currentStage = getStageByName(state.currentStageName)
+
+    currentStage.onEnemyCellClick(context, 10 * y + x)
   }
 }
 
@@ -48,6 +51,11 @@ const mutations = {
     if (deployedShips === 10) {
       state.currentStageName = playerMoveStage.NAME
     }
+  },
+  [types.HIT_ENEMY_FIELD] (state, index) {
+    Vue.set(state.enemyGrid.hits, index, true)
+
+    state.currentStageName = enemyMoveStage.NAME
   }
 }
 
