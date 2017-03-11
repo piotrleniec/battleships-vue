@@ -1,9 +1,13 @@
 <template>
-  <div :class="classes" v-html="'&nbsp;'"></div>
+  <div
+    :class="classes"
+     @click="onCellClick(x, y)"
+    v-html="'&nbsp;'"
+  ></div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import * as cellTypes from '@/core/cellTypes/player'
 
 export default {
@@ -23,7 +27,8 @@ export default {
 
       return ['player-grid__cell', modifierClass]
     }
-  }
+  },
+  methods: mapActions(['onCellClick'])
 }
 </script>
 
