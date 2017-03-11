@@ -18,13 +18,13 @@ const getters = {
 }
 
 const actions = {
-  onCellClick: ({ commit }, x, y) => {
-    commit(types.CURRENT_STAGE_ON_CELL_CLICK, x, y)
+  onCellClick: ({ commit }, { x, y }) => {
+    commit(types.CURRENT_STAGE_ON_CELL_CLICK, { x, y })
   }
 }
 
 const mutations = {
-  [types.CURRENT_STAGE_ON_CELL_CLICK] (state, x, y) {
+  [types.CURRENT_STAGE_ON_CELL_CLICK] (state, { x, y }) {
     const currentStage = getStageByName(state.currentStageName)
 
     currentStage.onCellClick(state, x, y)

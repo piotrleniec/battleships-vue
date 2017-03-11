@@ -1,9 +1,10 @@
 <template>
   <div
     :class="classes"
-     @click="onCellClick(x, y)"
+    @click="onCellClick({ x, y })"
     v-html="'&nbsp;'"
-  ></div>
+  >
+  </div>
 </template>
 
 <script>
