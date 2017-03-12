@@ -9,5 +9,5 @@ mv ../dist/* .
 git add -A
 git config user.email 'leniec.piotr@gmail.com'
 git config user.name 'Piotr Leniec'
-git commit -m 'Deployment'
+git commit -m "Build #${CIRCLE_BUILD_NUM}"
 git push origin gh-pages
