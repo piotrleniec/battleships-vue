@@ -1,5 +1,7 @@
 # battleships-vue
 
+[![CircleCI](https://circleci.com/gh/piotrleniec/battleships-vue/tree/master.svg?style=svg)](https://circleci.com/gh/piotrleniec/battleships-vue/tree/master)
+
 > A Vue.js project
 
 ## Build Setup
