@@ -4,12 +4,13 @@
       <div class="player-grid__label" v-html="'&nbsp;'"></div>
       <div
         v-for="label in horizontalLabels"
+        :key="label"
         class="player-grid__label"
       >{{ label }}</div>
     </div>
-    <div v-for="(label, y) in verticalLabels">
+    <div v-for="(label, y) in verticalLabels" :key="label">
       <div class="player-grid__label">{{ label }}</div>
-      <cell v-for="x in 10" :x="x - 1" :y="y" />
+      <cell v-for="x in 10" :key="x" :x="x - 1" :y="y" />
     </div>
   </div>
 </template>
