@@ -2,14 +2,15 @@ import { zip } from 'lodash'
 import * as enemyCellTypes from '@/core/cellTypes/enemy'
 import * as playerCellTypes from '@/core/cellTypes/player'
 
-export const enemyGridPresentation = grid =>
-  zip(grid.ships, grid.hits).map(zipped => {
-    const [ship, hit] = zipped
+const enemyGrid = state => {
+  const { ships, hits } = state.enemyGrid
 
+  return zip(ships, hits).map(([ship, hit]) => {
     if (!hit) return enemyCellTypes.FOG_OF_WAR
 
     return ship ? enemyCellTypes.HIT : enemyCellTypes.MISS
   })
+}
 
 export const playerGridPresentation = grid =>
   zip(grid.ships, grid.hits).map(zipped => {
@@ -35,7 +36,7 @@ const playerWon = state => {
 }
 
 export default {
-  enemyGrid: state => enemyGridPresentation(state.enemyGrid),
+  enemyGrid,
   playerGrid: state => playerGridPresentation(state.playerGrid),
   enemyWon,
   playerWon
