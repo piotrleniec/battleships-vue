@@ -12,16 +12,17 @@ const enemyGrid = state => {
   })
 }
 
-export const playerGridPresentation = grid =>
-  zip(grid.ships, grid.hits).map(zipped => {
-    const [ship, hit] = zipped
+const playerGrid = state => {
+  const { ships, hits } = state.playerGrid
 
+  return zip(ships, hits).map(([ship, hit]) => {
     if (ship) {
       return hit ? playerCellTypes.VISIBLE_SHIP : playerCellTypes.SHIP_IN_FOG_OF_WAR
     } else {
       return hit ? playerCellTypes.VISIBLE_WATER : playerCellTypes.WATER_IN_FOG_OF_WAR
     }
   })
+}
 
 const enemyWon = state => {
   const { ships, hits } = state.playerGrid
@@ -35,9 +36,4 @@ const playerWon = state => {
   return zip(ships, hits).filter(([ship, hit]) => ship && hit).length === 10
 }
 
-export default {
-  enemyGrid,
-  playerGrid: state => playerGridPresentation(state.playerGrid),
-  enemyWon,
-  playerWon
-}
+export default { enemyGrid, playerGrid, enemyWon, playerWon }
