@@ -3,7 +3,7 @@ import createInitialState from '@/store/modules/game/state'
 import * as enemyCellTypes from '@/core/cellTypes/enemy'
 import * as playerCellTypes from '@/core/cellTypes/player'
 
-const { enemyGrid, playerGrid, enemyWon } = getters
+const { enemyGrid, playerGrid, enemyWon, playerWon } = getters
 
 describe('enemyGrid', () => {
   it('returns enemy grid representation for components', () => {
@@ -61,6 +61,30 @@ describe('enemyWon', () => {
       for (var j = 0; j < 10; j++) hits[j] = true
 
       expect(enemyWon(state)).to.equal(true)
+    })
+  })
+})
+
+describe('playerWon', () => {
+  context("when less than 10 enemies' ships are hit", () => {
+    it('returns false', () => {
+      const state = createInitialState()
+      const { ships, hits } = state.enemyGrid
+      for (var i = 0; i < 10; i++) ships[i] = true
+      for (var j = 0; j < 5; j++) hits[j] = true
+
+      expect(playerWon(state)).to.equal(false)
+    })
+  })
+
+  context("when 10 enemies' ships are hit", () => {
+    it('returns true', () => {
+      const state = createInitialState()
+      const { ships, hits } = state.enemyGrid
+      for (var i = 0; i < 10; i++) ships[i] = true
+      for (var j = 0; j < 10; j++) hits[j] = true
+
+      expect(playerWon(state)).to.equal(true)
     })
   })
 })
