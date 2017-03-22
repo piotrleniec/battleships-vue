@@ -22,7 +22,21 @@ export const playerGridPresentation = grid =>
     }
   })
 
+const enemyWon = state => {
+  const { ships, hits } = state.playerGrid
+
+  return zip(ships, hits).filter(([ship, hit]) => ship && hit).length === 10
+}
+
+const playerWon = state => {
+  const { ships, hits } = state.enemyGrid
+
+  return zip(ships, hits).filter(([ship, hit]) => ship && hit).length === 10
+}
+
 export default {
   enemyGrid: state => enemyGridPresentation(state.enemyGrid),
-  playerGrid: state => playerGridPresentation(state.playerGrid)
+  playerGrid: state => playerGridPresentation(state.playerGrid),
+  enemyWon,
+  playerWon
 }
